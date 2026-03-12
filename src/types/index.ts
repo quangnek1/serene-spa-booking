@@ -1,0 +1,90 @@
+export interface User {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  phone?: string;
+  createdAt: string;
+}
+
+export interface Service {
+  id: string;
+  name: string;
+  slug: string;
+  price: number;
+  duration: number;
+  description: string;
+  shortDescription: string;
+  image: string;
+  features: string[];
+}
+
+export interface TimeSlot {
+  id: string;
+  time: string;
+  available: boolean;
+}
+
+export interface Booking {
+  id: string;
+  serviceId: string;
+  serviceName: string;
+  date: string;
+  time: string;
+  status: 'confirmed' | 'pending' | 'cancelled' | 'completed';
+  totalPrice: number;
+  depositAmount: number;
+  createdAt: string;
+  customerName: string;
+  customerEmail: string;
+  customerPhone: string;
+}
+
+export interface Payment {
+  id: string;
+  bookingId: string;
+  amount: number;
+  status: 'pending' | 'completed' | 'failed' | 'refunded';
+  method: string;
+  createdAt: string;
+}
+
+export interface LoginRequest {
+  email: string;
+  password: string;
+}
+
+export interface RegisterRequest {
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  phone?: string;
+}
+
+export interface AuthResponse {
+  token: string;
+  user: User;
+}
+
+export interface BookingRequest {
+  serviceId: string;
+  date: string;
+  time: string;
+  customerName: string;
+  customerEmail: string;
+  customerPhone: string;
+}
+
+export interface CheckoutRequest {
+  bookingId: string;
+  paymentMethod: string;
+}
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  rating: number;
+  text: string;
+  date: string;
+}
