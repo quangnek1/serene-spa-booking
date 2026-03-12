@@ -1,0 +1,142 @@
+import type { Service, Booking, TimeSlot, Testimonial } from '@/types';
+import serviceHeadSpa from '@/assets/service-head-spa.jpg';
+import serviceAromatherapy from '@/assets/service-aromatherapy.jpg';
+import servicePremium from '@/assets/service-premium.jpg';
+import serviceDeluxe from '@/assets/service-deluxe.jpg';
+
+export const mockServices: Service[] = [
+  {
+    id: '1',
+    name: 'Traditional Japanese Head Spa',
+    slug: 'traditional-japanese-head-spa',
+    price: 130,
+    duration: 75,
+    description: 'Experience the authentic Japanese head spa treatment that has been perfected over centuries. This deeply relaxing treatment focuses on your scalp, neck, and shoulders using traditional techniques combined with premium botanical products. Your session begins with a thorough scalp analysis, followed by a customized cleansing ritual, deep conditioning treatment, and an extended head, neck and shoulder massage that will leave you feeling completely renewed.',
+    shortDescription: 'A deeply relaxing traditional treatment focusing on scalp, neck, and shoulders using authentic Japanese techniques.',
+    image: serviceHeadSpa,
+    features: ['Scalp analysis', 'Deep cleansing ritual', 'Botanical conditioning', 'Extended head massage', 'Neck & shoulder massage'],
+  },
+  {
+    id: '2',
+    name: 'Aromatherapy Bliss',
+    slug: 'aromatherapy-bliss',
+    price: 120,
+    duration: 60,
+    description: 'Immerse yourself in the healing power of essential oils combined with expert massage techniques. This treatment uses carefully selected aromatherapy blends to promote deep relaxation, relieve stress, and restore balance to both mind and body. Each oil is chosen specifically for its therapeutic properties, creating a personalized experience that addresses your unique needs.',
+    shortDescription: 'Healing essential oils combined with expert massage techniques for deep relaxation and stress relief.',
+    image: serviceAromatherapy,
+    features: ['Personalized oil blend', 'Stress relief massage', 'Scalp treatment', 'Aromatherapy inhalation', 'Hot towel wrap'],
+  },
+  {
+    id: '3',
+    name: 'Premium Japanese Head Spa',
+    slug: 'premium-japanese-head-spa',
+    price: 180,
+    duration: 110,
+    description: 'Our premium offering takes the traditional head spa experience to new heights. This extended session includes everything in our traditional treatment plus additional luxury elements such as a hot stone facial massage, premium Japanese hair treatment, and an extended relaxation period. The treatment uses our exclusive range of Japanese botanical products imported directly from Japan.',
+    shortDescription: 'An elevated head spa experience with luxury additions including hot stone facial massage and premium Japanese products.',
+    image: servicePremium,
+    features: ['Everything in Traditional', 'Hot stone facial massage', 'Premium Japanese products', 'Extended relaxation', 'Complimentary tea ceremony'],
+  },
+  {
+    id: '4',
+    name: 'Signature Deluxe Combo',
+    slug: 'signature-deluxe-combo',
+    price: 240,
+    duration: 120,
+    description: 'The ultimate spa experience combining our best treatments into one luxurious session. Begin with a full head spa treatment, followed by an aromatherapy body massage, and finish with a revitalizing facial. This comprehensive package is designed for those seeking complete relaxation and rejuvenation in a single visit.',
+    shortDescription: 'The ultimate combination of head spa, aromatherapy massage, and revitalizing facial in one luxurious session.',
+    image: serviceDeluxe,
+    features: ['Full head spa treatment', 'Aromatherapy body massage', 'Revitalizing facial', 'Hot towel therapy', 'Premium tea service'],
+  },
+];
+
+export const mockTimeSlots: TimeSlot[] = [
+  { id: '1', time: '09:00', available: true },
+  { id: '2', time: '09:30', available: true },
+  { id: '3', time: '10:00', available: false },
+  { id: '4', time: '10:30', available: true },
+  { id: '5', time: '11:00', available: true },
+  { id: '6', time: '11:30', available: false },
+  { id: '7', time: '12:00', available: true },
+  { id: '8', time: '12:30', available: true },
+  { id: '9', time: '13:00', available: false },
+  { id: '10', time: '13:30', available: true },
+  { id: '11', time: '14:00', available: true },
+  { id: '12', time: '14:30', available: true },
+  { id: '13', time: '15:00', available: false },
+  { id: '14', time: '15:30', available: true },
+  { id: '15', time: '16:00', available: true },
+  { id: '16', time: '16:30', available: true },
+  { id: '17', time: '17:00', available: true },
+  { id: '18', time: '17:30', available: false },
+];
+
+export const mockBookings: Booking[] = [
+  {
+    id: 'b1',
+    serviceId: '1',
+    serviceName: 'Traditional Japanese Head Spa',
+    date: '2026-03-20',
+    time: '10:30',
+    status: 'confirmed',
+    totalPrice: 130,
+    depositAmount: 30,
+    createdAt: '2026-03-10T10:00:00Z',
+    customerName: 'Jane Smith',
+    customerEmail: 'jane@example.com',
+    customerPhone: '0412345678',
+  },
+  {
+    id: 'b2',
+    serviceId: '3',
+    serviceName: 'Premium Japanese Head Spa',
+    date: '2026-03-25',
+    time: '14:00',
+    status: 'pending',
+    totalPrice: 180,
+    depositAmount: 40,
+    createdAt: '2026-03-11T14:00:00Z',
+    customerName: 'Jane Smith',
+    customerEmail: 'jane@example.com',
+    customerPhone: '0412345678',
+  },
+  {
+    id: 'b3',
+    serviceId: '2',
+    serviceName: 'Aromatherapy Bliss',
+    date: '2026-02-15',
+    time: '11:00',
+    status: 'completed',
+    totalPrice: 120,
+    depositAmount: 25,
+    createdAt: '2026-02-10T09:00:00Z',
+    customerName: 'Jane Smith',
+    customerEmail: 'jane@example.com',
+    customerPhone: '0412345678',
+  },
+];
+
+export const mockTestimonials: Testimonial[] = [
+  {
+    id: 't1',
+    name: 'Sarah M.',
+    rating: 5,
+    text: 'Absolutely heavenly experience! The head spa treatment was unlike anything I\'ve ever had. I left feeling completely refreshed and my hair has never looked better.',
+    date: '2026-02-28',
+  },
+  {
+    id: 't2',
+    name: 'Emily T.',
+    rating: 5,
+    text: 'The Premium Japanese Head Spa was worth every penny. The attention to detail and the serene atmosphere made it a truly transformative experience.',
+    date: '2026-02-15',
+  },
+  {
+    id: 't3',
+    name: 'Michael R.',
+    rating: 5,
+    text: 'I came in stressed and left feeling like a new person. The aromatherapy bliss treatment is now my monthly self-care ritual. Highly recommend!',
+    date: '2026-01-30',
+  },
+];
