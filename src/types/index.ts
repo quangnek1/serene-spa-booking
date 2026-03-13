@@ -31,7 +31,8 @@ export interface Booking {
   serviceName: string;
   date: string;
   time: string;
-  status: 'confirmed' | 'pending' | 'cancelled' | 'completed';
+  status: 'pending_payment' | 'confirmed' | 'completed' | 'cancelled';
+  paymentMethod: 'online' | 'at_store';
   totalPrice: number;
   depositAmount: number;
   createdAt: string;
@@ -74,6 +75,7 @@ export interface BookingRequest {
   customerName: string;
   customerEmail: string;
   customerPhone: string;
+  paymentMethod: 'online' | 'at_store';
 }
 
 export interface CheckoutRequest {

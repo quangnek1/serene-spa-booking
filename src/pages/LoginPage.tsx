@@ -43,7 +43,7 @@ export default function LoginPage() {
             className="max-w-sm mx-auto"
           >
             <div className="text-center mb-8">
-              <img src={logo} alt="Kokoro" className="h-16 w-16 mx-auto mb-4" />
+              <img src={logo} alt="Hannah HeadSpa" className="h-16 w-16 mx-auto mb-4" />
               <h1 className="text-2xl font-semibold text-foreground">Welcome Back</h1>
               <p className="text-sm text-muted-foreground mt-1">Sign in to your account</p>
             </div>

@@ -23,7 +23,7 @@ export function GallerySection() {
             Our Gallery
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Take a glimpse into the serene environment that awaits you at Kokoro.
+            Take a glimpse into the serene environment that awaits you at Hannah HeadSpa.
           </p>
         </motion.div>
 

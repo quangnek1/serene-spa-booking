@@ -33,13 +33,13 @@ export function AboutSection() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Kokoro Japanese Head Spa in Melbourne and Williamstown VIC 3016, Australia, understands that safety and sanitation are paramount to our customers.
+                Hannah HeadSpa and Massage in Footscray VIC 3011, Australia, understands that safety and sanitation are paramount to our customers.
               </p>
               <p>
                 Our implements, equipment, and electrical instruments are always thoroughly cleaned and subjected to an approved sanitizing and disinfecting process before being reused. We routinely consult with the State Cosmetology Regulations to ensure full compliance.
               </p>
               <p>
-                Our team of skilled therapists have been trained in authentic Japanese head spa techniques, bringing the centuries-old tradition of scalp care and relaxation to Melbourne.
+                Our team of skilled therapists have been trained in authentic Japanese head spa techniques, bringing the centuries-old tradition of scalp care and relaxation to Footscray.
               </p>
             </div>
             <Link to="/services">
