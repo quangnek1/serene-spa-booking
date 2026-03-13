@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Navbar } from '@/components/sections/Navbar';
 import { Footer } from '@/components/sections/Footer';
@@ -50,11 +50,17 @@ export default function BookingPage() {
     setCurrentStep(3);
   };
 
-  const handleCheckout = async () => {
+  const handleCheckout = async (paymentMethod: 'online' | 'at_store') => {
     setIsProcessing(true);
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    if (paymentMethod === 'online') {
+      // TODO: Call payment API
+      await new Promise(resolve => setTimeout(resolve, 1500));
+    } else {
+      // Pay at store - just create booking, no payment API call
+      await new Promise(resolve => setTimeout(resolve, 800));
+    }
     setIsProcessing(false);
-    navigate('/booking/success');
+    navigate('/booking/success', { state: { paymentMethod } });
   };
 
   return (

@@ -48,9 +48,9 @@ export default function RegisterPage() {
             className="max-w-sm mx-auto"
           >
             <div className="text-center mb-8">
-              <img src={logo} alt="Kokoro" className="h-16 w-16 mx-auto mb-4" />
+              <img src={logo} alt="Hannah HeadSpa" className="h-16 w-16 mx-auto mb-4" />
               <h1 className="text-2xl font-semibold text-foreground">Create Account</h1>
-              <p className="text-sm text-muted-foreground mt-1">Join Kokoro Head Spa</p>
+              <p className="text-sm text-muted-foreground mt-1">Join Hannah HeadSpa and Massage</p>
             </div>
 
             <div className="bg-card rounded-2xl p-6 spa-card-shadow">

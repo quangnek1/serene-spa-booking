@@ -10,7 +10,7 @@ export function HeroSection() {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Kokoro Japanese Head Spa interior"
+          alt="Hannah HeadSpa and Massage interior"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-foreground/40" />
@@ -35,7 +35,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.15, ease: [0.4, 0, 0.2, 1] }}
           className="text-lg sm:text-xl text-primary-foreground/85 mb-8 max-w-xl mx-auto leading-relaxed"
         >
-          Authentic Japanese head spa treatments in the heart of Melbourne, designed to restore your mind, body, and spirit.
+          Premium Japanese Head Spa and Massage in Footscray. Relaxing scalp treatments, aromatherapy and luxury spa services.
         </motion.p>
 
         <motion.div

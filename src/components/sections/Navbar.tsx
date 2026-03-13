@@ -24,11 +24,11 @@ export function Navbar() {
         <div className="spa-container flex items-center justify-center gap-6 py-2 text-xs sm:text-sm text-primary-foreground">
           <span className="flex items-center gap-1.5">
             <MapPin className="h-3.5 w-3.5" />
-            143 Railway Pl, Williamstown VIC 3016, Australia
+            5/158 Barkly St Footscray 3011 VIC, Australia
           </span>
           <span className="flex items-center gap-1.5">
             <Phone className="h-3.5 w-3.5" />
-            0478-050-389
+            0424 999 868
           </span>
         </div>
       </div>
@@ -37,7 +37,7 @@ export function Navbar() {
       <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
         <div className="spa-container flex items-center justify-between py-3">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Kokoro Japanese Head Spa" className="h-14 w-14 object-contain" />
+            <img src={logo} alt="Hannah HeadSpa and Massage" className="h-14 w-14 object-contain" />
           </Link>
 
           {/* Desktop nav */}
