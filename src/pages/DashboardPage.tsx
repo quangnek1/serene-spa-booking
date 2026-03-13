@@ -6,14 +6,21 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { mockBookings } from '@/lib/api/mockData';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, User, LogOut } from 'lucide-react';
+import { Calendar, Clock, LogOut } from 'lucide-react';
 import type { Booking } from '@/types';
 
 const statusColors: Record<Booking['status'], string> = {
   confirmed: 'bg-green-100 text-green-800',
-  pending: 'bg-yellow-100 text-yellow-800',
+  pending_payment: 'bg-yellow-100 text-yellow-800',
   cancelled: 'bg-red-100 text-red-800',
   completed: 'bg-muted text-muted-foreground',
+};
+
+const statusLabels: Record<Booking['status'], string> = {
+  confirmed: 'Confirmed',
+  pending_payment: 'Pending Payment',
+  cancelled: 'Cancelled',
+  completed: 'Completed',
 };
 
 export default function DashboardPage() {
@@ -75,8 +82,8 @@ export default function DashboardPage() {
                         </span>
                       </div>
                     </div>
-                    <span className={`text-xs font-medium px-2.5 py-1 rounded-full capitalize ${statusColors[booking.status]}`}>
-                      {booking.status}
+                    <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${statusColors[booking.status]}`}>
+                      {statusLabels[booking.status]}
                     </span>
                   </div>
 
@@ -84,7 +91,7 @@ export default function DashboardPage() {
 
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-foreground">${booking.totalPrice}</span>
-                    {(booking.status === 'confirmed' || booking.status === 'pending') && (
+                    {(booking.status === 'confirmed' || booking.status === 'pending_payment') && (
                       <div className="flex gap-2">
                         <Button variant="outline" size="sm" className="rounded-full text-xs h-8">
                           Reschedule
