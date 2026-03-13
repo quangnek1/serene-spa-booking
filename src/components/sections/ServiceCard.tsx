@@ -19,7 +19,7 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
     >
       <Link
         to={`/services/${service.slug}`}
-        className="group block bg-card rounded-2xl overflow-hidden spa-card-shadow hover:spa-card-shadow-hover transition-all duration-300 hover:-translate-y-1"
+        className="group flex flex-col h-full bg-card rounded-2xl overflow-hidden spa-card-shadow hover:spa-card-shadow-hover transition-all duration-300 hover:-translate-y-1"
       >
         <div className="aspect-[4/3] overflow-hidden">
           <img
@@ -28,14 +28,14 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
-        <div className="p-5">
+        <div className="p-5 flex flex-col flex-1">
           <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
             {service.name}
           </h3>
           <p className="text-sm text-muted-foreground mb-4 line-clamp-2 leading-relaxed">
             {service.shortDescription}
           </p>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mt-auto">
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
                 <DollarSign className="h-4 w-4" />

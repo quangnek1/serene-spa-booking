@@ -2,11 +2,17 @@ import { motion } from 'framer-motion';
 import gallery1 from '@/assets/gallery-1.jpg';
 import gallery2 from '@/assets/gallery-2.jpg';
 import gallery3 from '@/assets/gallery-3.jpg';
+import serviceHeadSpa from '@/assets/service-head-spa.jpg';
+import serviceAromatherapy from '@/assets/service-aromatherapy.jpg';
+import servicePremium from '@/assets/service-premium.jpg';
 
 const images = [
   { src: gallery1, alt: 'Japanese zen spa interior' },
   { src: gallery2, alt: 'Spa treatment room' },
   { src: gallery3, alt: 'Relaxation area' },
+  { src: serviceHeadSpa, alt: 'Head spa treatment' },
+  { src: serviceAromatherapy, alt: 'Aromatherapy session' },
+  { src: servicePremium, alt: 'Premium spa experience' },
 ];
 
 export function GallerySection() {
@@ -34,7 +40,7 @@ export function GallerySection() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
+              transition={{ delay: i * 0.08, duration: 0.5 }}
               className="group aspect-[4/3] rounded-2xl overflow-hidden spa-card-shadow"
             >
               <img
