@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { MapPin, Phone, Clock, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, ExternalLink } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
 const FacebookIcon = () => (
@@ -17,56 +16,15 @@ const InstagramIcon = () => (
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
-      {/* Google Map */}
-      <div className="w-full">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2!2d144.8997!3d-37.8005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d15a1c5d8a7%3A0x0!2s5%2F158+Barkly+St%2C+Footscray+VIC+3011!5e0!3m2!1sen!2sau!4v1700000000000"
-          width="100%"
-          height="300"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Hannah HeadSpa and Massage location"
-          className="w-full"
-        />
-      </div>
+      <div className="spa-container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Column 1: Info */}
+          <div className="space-y-5">
+            <div className="flex items-center gap-3">
+              <img src={logo} alt="Hannah HeadSpa and Massage" className="h-14 w-14 brightness-0 invert" />
+              <p className="font-semibold text-lg">HANNAH HEADSPA<br/>AND MASSAGE</p>
+            </div>
 
-      <div className="spa-container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div>
-            <img src={logo} alt="Hannah HeadSpa and Massage" className="h-16 w-16 mb-4 brightness-0 invert" />
-            <p className="font-semibold text-lg mb-2">HANNAH HEADSPA AND MASSAGE</p>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
-              Premium Japanese Head Spa and Massage in Footscray. Relaxing scalp treatments, aromatherapy and luxury spa services.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
-            <nav className="flex flex-col gap-2.5">
-              {[
-                { label: 'Home', href: '/' },
-                { label: 'Services', href: '/services' },
-                { label: 'Booking', href: '/booking' },
-                { label: 'Dashboard', href: '/dashboard' },
-              ].map(link => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
             <div className="flex flex-col gap-3 text-sm text-primary-foreground/70">
               <span className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
@@ -88,7 +46,7 @@ export function Footer() {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-3 mt-4">
+            <div className="flex items-center gap-3">
               <a
                 href="https://www.facebook.com/profile.php?id=61575365498498"
                 target="_blank"
@@ -108,23 +66,32 @@ export function Footer() {
                 <InstagramIcon />
               </a>
             </div>
+
+            {/* Opening Hours */}
+            <div className="text-sm text-primary-foreground/70 space-y-1">
+              <p className="font-medium text-primary-foreground">Opening Hours</p>
+              <p>Mon – Fri: 9:00 AM – 6:00 PM</p>
+              <p>Sat: 9:00 AM – 5:00 PM</p>
+              <p>Sun: 10:00 AM – 4:00 PM</p>
+            </div>
           </div>
 
-          {/* Hours */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4">Opening Hours</h4>
-            <div className="flex flex-col gap-2.5 text-sm text-primary-foreground/70">
-              <span className="flex items-center gap-2">
-                <Clock className="h-4 w-4 shrink-0" />
-                Mon – Fri: 9:00 AM – 6:00 PM
-              </span>
-              <span className="pl-6">Sat: 9:00 AM – 5:00 PM</span>
-              <span className="pl-6">Sun: 10:00 AM – 4:00 PM</span>
-            </div>
+          {/* Column 2: Google Map */}
+          <div className="rounded-xl overflow-hidden h-[220px] md:h-[280px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2!2d144.8997!3d-37.8005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d15a1c5d8a7%3A0x0!2s5%2F158+Barkly+St%2C+Footscray+VIC+3011!5e0!3m2!1sen!2sau!4v1700000000000"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Hannah HeadSpa and Massage location"
+            />
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center text-sm text-primary-foreground/50">
+        <div className="mt-8 pt-6 border-t border-primary-foreground/10 text-center text-sm text-primary-foreground/50">
           © {new Date().getFullYear()} Hannah HeadSpa and Massage. All rights reserved.
         </div>
       </div>
