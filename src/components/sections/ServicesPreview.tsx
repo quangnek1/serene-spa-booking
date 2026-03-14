@@ -24,8 +24,8 @@ export function ServicesPreview() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {mockServices.map((service, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {mockServices.slice(0, 6).map((service, i) => (
             <ServiceCard key={service.id} service={service} index={i} />
           ))}
         </div>
