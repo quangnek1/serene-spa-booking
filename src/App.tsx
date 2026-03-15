@@ -14,6 +14,13 @@ import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/DashboardPage";
 import GalleryPage from "./pages/GalleryPage";
 import ContactPage from "./pages/ContactPage";
+import { AdminLayout } from "./components/admin/AdminLayout";
+import AdminDashboardPage from "./pages/admin/AdminDashboardPage";
+import AdminBookingsPage from "./pages/admin/AdminBookingsPage";
+import AdminBookingDetailPage from "./pages/admin/AdminBookingDetailPage";
+import AdminCustomersPage from "./pages/admin/AdminCustomersPage";
+import AdminCustomerDetailPage from "./pages/admin/AdminCustomerDetailPage";
+import AdminServicesPage from "./pages/admin/AdminServicesPage";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +41,18 @@ const App = () => (
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/contact" element={<ContactPage />} />
+
+          {/* Admin Routes */}
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminDashboardPage />} />
+            <Route path="dashboard" element={<AdminDashboardPage />} />
+            <Route path="bookings" element={<AdminBookingsPage />} />
+            <Route path="bookings/:id" element={<AdminBookingDetailPage />} />
+            <Route path="customers" element={<AdminCustomersPage />} />
+            <Route path="customers/:id" element={<AdminCustomerDetailPage />} />
+            <Route path="services" element={<AdminServicesPage />} />
+          </Route>
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
