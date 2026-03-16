@@ -51,6 +51,7 @@ export default function AdminServicesPage() {
     } else {
       const newService: Service = {
         id: `s-${Date.now()}`,
+        categoryId: 1,
         name: form.name,
         slug: form.name.toLowerCase().replace(/\s+/g, '-'),
         price: Number(form.price),
@@ -59,6 +60,12 @@ export default function AdminServicesPage() {
         description: form.description,
         image: '',
         features: [],
+        hot: false,
+        status: true,
+        seoTitle: form.name,
+        metaKeywords: '',
+        metaDescription: form.shortDescription,
+        packages: [{ serviceId: Date.now(), durationMinutes: Number(form.duration), price: Number(form.price) }],
       };
       setServices((prev) => [...prev, newService]);
       toast({ title: 'Service created' });
