@@ -4,7 +4,7 @@ import { Footer } from '@/components/sections/Footer';
 import { Button } from '@/components/ui/button';
 import { mockServices } from '@/lib/api/mockData';
 import { motion } from 'framer-motion';
-import { Clock, DollarSign, ArrowLeft, Check } from 'lucide-react';
+import { Clock, DollarSign, ArrowLeft, Check, Flame } from 'lucide-react';
 
 export default function ServiceDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -52,11 +52,18 @@ export default function ServiceDetailPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <h1 className="text-3xl sm:text-4xl font-semibold text-foreground mb-4">
-                {service.name}
-              </h1>
+              <div className="flex items-center gap-3 mb-2">
+                <h1 className="text-3xl sm:text-4xl font-semibold text-foreground">
+                  {service.name}
+                </h1>
+                {service.hot && (
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-destructive/10 text-destructive text-xs font-semibold">
+                    <Flame className="h-3 w-3" /> Popular
+                  </span>
+                )}
+              </div>
 
-              <div className="flex items-center gap-6 mb-6">
+              <div className="flex items-center gap-6 mb-6 mt-4">
                 <span className="flex items-center gap-1.5 text-lg text-primary font-semibold">
                   <DollarSign className="h-5 w-5" />{service.price}
                 </span>
@@ -64,6 +71,18 @@ export default function ServiceDetailPage() {
                   <Clock className="h-5 w-5" />{service.duration} minutes
                 </span>
               </div>
+
+              {/* Packages */}
+              {service.packages.length > 1 && (
+                <div className="flex gap-3 mb-6">
+                  {service.packages.map((pkg, i) => (
+                    <div key={i} className="bg-muted rounded-xl px-4 py-2 text-sm">
+                      <span className="font-medium text-foreground">{pkg.durationMinutes} min</span>
+                      <span className="text-muted-foreground ml-2">${pkg.price}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <p className="text-muted-foreground leading-relaxed mb-8">
                 {service.description}

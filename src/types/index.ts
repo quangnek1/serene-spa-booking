@@ -7,8 +7,27 @@ export interface User {
   createdAt: string;
 }
 
+export interface Category {
+  id: number;
+  name: string;
+  slug: string;
+  seoTitle: string;
+  metaKeywords: string;
+  metaDescription: string;
+  parentId: number | null;
+  sort: number;
+  status: boolean;
+}
+
+export interface ServicePackage {
+  serviceId: number;
+  durationMinutes: number;
+  price: number;
+}
+
 export interface Service {
   id: string;
+  categoryId: number;
   name: string;
   slug: string;
   price: number;
@@ -17,6 +36,12 @@ export interface Service {
   shortDescription: string;
   image: string;
   features: string[];
+  hot: boolean;
+  status: boolean;
+  seoTitle: string;
+  metaKeywords: string;
+  metaDescription: string;
+  packages: ServicePackage[];
 }
 
 export interface TimeSlot {

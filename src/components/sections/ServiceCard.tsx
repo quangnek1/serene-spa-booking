@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Clock, DollarSign, ArrowRight } from 'lucide-react';
+import { Clock, DollarSign, ArrowRight, Flame } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { Service } from '@/types';
 
@@ -21,12 +21,17 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
         to={`/services/${service.slug}`}
         className="group flex flex-col h-full bg-card rounded-2xl overflow-hidden spa-card-shadow hover:spa-card-shadow-hover transition-all duration-300 hover:-translate-y-1"
       >
-        <div className="aspect-[4/3] overflow-hidden">
+        <div className="aspect-[4/3] overflow-hidden relative">
           <img
             src={service.image}
             alt={service.name}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
+          {service.hot && (
+            <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-destructive text-destructive-foreground text-xs font-semibold shadow-md">
+              <Flame className="h-3 w-3" /> Popular
+            </span>
+          )}
         </div>
         <div className="p-5 flex flex-col flex-1">
           <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
